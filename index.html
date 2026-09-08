@@ -2,35 +2,219 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>International Poly Alliance — Coming Soon</title>
+  <title>International Poly Alliance</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="robots" content="index, follow" />
-  <meta name="description" content="International Poly Alliance — coming soon." />
+  <meta name="description" content="International Poly Alliance — a cross-border alliance connecting national polyamory and ethical non-monogamy collectives." />
   <link rel="icon" type="image/jpeg" href="/images/logo.jpg" />
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Noto+Sans:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
-    body {
-      background: radial-gradient(circle at 50% 30%, #fdf2f8 0%, #eef2ff 45%, #e0f2fe 100%);
+    :root {
+      --indigo: #352448;
+      --blue: #1689B8;
+      --pink: #BD6891;
+      --violet: #8577B3;
+      --white: #FFFFFF;
+      --offwhite: #FBFAFD;
+      --line: #E6E0EE;
+      --muted: #786E88;
     }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--white);
+      color: var(--indigo);
+      font-family: 'Noto Sans', sans-serif;
+      line-height: 1.6;
+    }
+    h1, h2, h3 { font-family: 'Montserrat', sans-serif; margin: 0 0 0.5em; }
+    a { color: var(--blue); }
+    .wrap { max-width: 960px; margin: 0 auto; padding: 0 1.5rem; }
+
+    header.hero {
+      text-align: center;
+      padding: 4rem 1.5rem 3rem;
+      background: linear-gradient(135deg, #fdf2f8 0%, #f3effa 45%, #e9f5fb 100%);
+    }
+    header.hero img.logo { width: 140px; height: auto; margin-bottom: 1.5rem; }
+    header.hero .tagline {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: 1.6rem;
+      background: linear-gradient(90deg, var(--pink), var(--violet), var(--blue));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-bottom: 0.75rem;
+    }
+    header.hero h1 { font-size: 2rem; font-weight: 700; }
+    header.hero p.mission { max-width: 620px; margin: 1rem auto 0; color: var(--indigo); }
+
+    section { padding: 3rem 0; }
+    section h2 { font-size: 1.5rem; text-align: center; margin-bottom: 2rem; }
+
+    .pillars {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.25rem;
+    }
+    .pillar {
+      background: var(--offwhite);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 1.5rem;
+    }
+    .pillar h3 { color: var(--blue); font-size: 1.1rem; }
+    .pillar p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+
+    .about-copy { max-width: 680px; margin: 0 auto 2rem; text-align: center; color: var(--muted); }
+
+    .members {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1rem;
+    }
+    .member {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 1.1rem 1.25rem;
+    }
+    .member .country { font-size: 0.85rem; color: var(--muted); font-weight: 500; }
+    .member .org { font-family: 'Montserrat', sans-serif; font-weight: 600; margin-top: 0.15rem; }
+    .member .org a { text-decoration: none; }
+    .member .org a:hover { text-decoration: underline; }
+    .member.forming .org { color: var(--muted); font-weight: 500; font-style: italic; }
+
+    .join {
+      background: var(--offwhite);
+      border-radius: 20px;
+      padding: 2.5rem;
+      text-align: center;
+    }
+    .join .btn {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.75rem 1.75rem;
+      background: var(--blue);
+      color: var(--white);
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .join .btn:hover { filter: brightness(0.92); }
+    .join .note {
+      margin-top: 1rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 2rem 1.5rem;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+    footer img { width: 28px; height: auto; vertical-align: middle; margin-right: 0.4rem; opacity: 0.85; }
   </style>
 </head>
-<body class="min-h-screen flex items-center justify-center p-6 text-slate-700">
+<body>
 
-  <main class="text-center max-w-lg w-full">
-    <img src="/images/logo.jpg" alt="International Poly Alliance" class="mx-auto w-64 sm:w-80 h-auto mb-8 rounded-2xl shadow-lg">
-
-    <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-800">
-      Coming soon
-    </h1>
-
-    <p class="mt-4 text-lg leading-relaxed">
-      The International Poly Alliance website is on its way.
+  <header class="hero">
+    <img class="logo" src="/images/logo-transparent.png" alt="International Poly Alliance logo" />
+    <div class="tagline">Connect. Protect. Empower.</div>
+    <h1>International Poly Alliance</h1>
+    <p class="mission">
+      A cross-border alliance connecting national polyamory and ethical non-monogamy collectives —
+      sharing resources, coordinating campaigns, and standing in solidarity so no local group has to work alone.
     </p>
+  </header>
 
-    <p class="mt-8 text-sm text-slate-400">
-      &copy; 2026 International Poly Alliance
-    </p>
-  </main>
+  <div class="wrap">
+
+    <section id="about">
+      <p class="about-copy">
+        PolyPortugal, UK Polyamory and six other national collectives are building shared resources
+        so no group has to start from zero.
+      </p>
+      <div class="pillars">
+        <div class="pillar">
+          <h3>Connect</h3>
+          <p>Breaking isolation by linking national collectives worldwide into a supportive peer network.</p>
+        </div>
+        <div class="pillar">
+          <h3>Protect</h3>
+          <p>Collaborative advocacy for legal recognition, anti-discrimination, and family rights.</p>
+        </div>
+        <div class="pillar">
+          <h3>Empower</h3>
+          <p>Sharing knowledge, event playbooks, and organisational toolkits across borders.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="members">
+      <h2>Member organisations</h2>
+      <div class="members">
+        <div class="member">
+          <div class="country">United Kingdom</div>
+          <div class="org"><a href="https://ukpolyamory.org/" target="_blank" rel="noopener noreferrer">UK Polyamory Association (UKPA)</a></div>
+        </div>
+        <div class="member">
+          <div class="country">Norway</div>
+          <div class="org"><a href="https://www.polynorge.no" target="_blank" rel="noopener noreferrer">PolyNorge</a></div>
+        </div>
+        <div class="member">
+          <div class="country">Sweden</div>
+          <div class="org"><a href="https://www.polyforeningen.org" target="_blank" rel="noopener noreferrer">The Swedish Polyamory Association</a></div>
+        </div>
+        <div class="member">
+          <div class="country">United States</div>
+          <div class="org"><a href="https://www.open-love.org/" target="_blank" rel="noopener noreferrer">OPEN (Organization for Polyamory and Ethical Non-monogamy)</a></div>
+        </div>
+        <div class="member">
+          <div class="country">Portugal</div>
+          <div class="org"><a href="https://www.facebook.com/polyportugal/" target="_blank" rel="noopener noreferrer">PolyPortugal</a></div>
+        </div>
+        <div class="member">
+          <div class="country">Brazil</div>
+          <div class="org"><a href="https://www.instagram.com/anamosoficial" target="_blank" rel="noopener noreferrer">ANAMOS</a></div>
+        </div>
+        <div class="member">
+          <div class="country">Ukraine</div>
+          <div class="org">Polyamory UA</div>
+        </div>
+        <div class="member forming">
+          <div class="country">Canada</div>
+          <div class="org">National group forming</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="join">
+      <div class="join">
+        <h2>Represent a national group?</h2>
+        <p>
+          If you organise for polyamory or ethical non-monogamy in a country not yet listed here —
+          or you're building a national group looking for allies — we'd like to hear from you.
+        </p>
+        <a class="btn" href="mailto:trustees@ukpolyamory.org">Get in touch</a>
+        <p class="note">
+          We're using UK Polyamory Association's trustees address while International Poly Alliance sets up
+          its own domain email — that will change soon.
+        </p>
+      </div>
+    </section>
+
+  </div>
+
+  <footer>
+    <img src="/images/logo-transparent.png" alt="" />
+    Maintained by the IPA Communications Working Group
+  </footer>
 
 </body>
 </html>
