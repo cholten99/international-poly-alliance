@@ -10,3 +10,9 @@ RedirectMatch 404 "^/\.git($|/)"
 <FilesMatch "\.(env|log|bak|old|swp|sqlite3?|db|pem|key)$">
     Require all denied
 </FilesMatch>
+
+# This is a static site edited directly and expected to change often --
+# don't let browsers/CDN cache HTML so edits show up immediately.
+<FilesMatch "\.html$">
+    Header set Cache-Control "no-cache, no-store, must-revalidate"
+</FilesMatch>
