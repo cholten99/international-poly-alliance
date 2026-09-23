@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Add an Event — International Poly Alliance</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex, follow" />
+  <meta name="description" content="Submit an event of interest to the International Poly Alliance for review." />
+  <link rel="icon" type="image/png" href="/images/icon-mark.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Noto+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --indigo: #352448;
+      --blue: #1689B8;
+      --pink: #BD6891;
+      --violet: #8577B3;
+      --white: #FFFFFF;
+      --offwhite: #FBFAFD;
+      --line: #E6E0EE;
+      --muted: #786E88;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--white);
+      color: var(--indigo);
+      font-family: 'Noto Sans', sans-serif;
+      line-height: 1.6;
+    }
+    h1, h2, h3 { font-family: 'Montserrat', sans-serif; margin: 0 0 0.5em; }
+    a { color: var(--blue); }
+    .wrap { max-width: 640px; margin: 0 auto; padding: 0 1.5rem; }
+
+    header.hero {
+      text-align: center;
+      padding: 2rem 1.5rem 1.5rem;
+      background: linear-gradient(135deg, #fdf2f8 0%, #f3effa 45%, #e9f5fb 100%);
+    }
+    header.hero img.logo { width: 160px; height: auto; margin-bottom: 0.5rem; }
+    header.hero h1 { font-size: 2rem; font-weight: 700; }
+    header.hero p.mission { max-width: 620px; margin: 1rem auto 0; color: var(--indigo); }
+    header.hero .nav-wrap { position: relative; max-width: 960px; margin: 0 auto; }
+    header.hero .back-link {
+      position: absolute;
+      top: 1.25rem;
+      left: 1.5rem;
+      display: inline-block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 0.4rem 0.9rem;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--white);
+    }
+    header.hero .back-link:hover { background: var(--offwhite); }
+
+    section { padding: 3rem 0; }
+
+    .notice {
+      border-radius: 12px;
+      padding: 1rem 1.25rem;
+      margin-bottom: 1.5rem;
+      font-size: 0.95rem;
+    }
+    .notice.success { background: #e9f7ef; color: #1e6b3e; border: 1px solid #b8e3c8; }
+    .notice.error { background: #fdeeee; color: #8a2b2b; border: 1px solid #f3c6c6; }
+
+    form { display: flex; flex-direction: column; gap: 1.25rem; }
+    label { display: block; font-weight: 600; margin-bottom: 0.4rem; font-size: 0.95rem; }
+    label .required { color: var(--pink); }
+    input[type="text"], input[type="url"], input[type="email"], select, textarea {
+      width: 100%;
+      padding: 0.65rem 0.8rem;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      font-family: inherit;
+      font-size: 1rem;
+      color: var(--indigo);
+      background: var(--white);
+    }
+    textarea { resize: vertical; min-height: 100px; }
+    input:focus, select:focus, textarea:focus { outline: 2px solid var(--blue); outline-offset: 1px; }
+    .hint { font-size: 0.85rem; color: var(--muted); margin-top: 0.3rem; }
+
+    /* Honeypot -- hidden from real visitors, left visible to naive bots that fill every field */
+    .hp-field { position: absolute; left: -9999px; top: -9999px; }
+
+    .submit-btn {
+      display: inline-block;
+      align-self: center;
+      margin-top: 0.5rem;
+      padding: 0.75rem 2rem;
+      background: var(--blue);
+      color: var(--white);
+      border: none;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 1rem;
+      font-family: inherit;
+      cursor: pointer;
+    }
+    .submit-btn:hover { filter: brightness(0.92); }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 2rem 1.5rem;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+    footer img { width: 28px; height: auto; vertical-align: middle; margin-right: 0.4rem; opacity: 0.85; }
+  </style>
+</head>
+<body>
+
+  <header class="hero">
+    <div class="nav-wrap">
+      <a class="back-link" href="/events.html">← Back to Events</a>
+    </div>
+    <img class="logo" src="/images/logo-transparent.png" alt="International Poly Alliance logo" />
+    <h1>Add an Event</h1>
+    <p class="mission">
+      Know of a conference or gathering worth listing? Submit it below and we'll review it for the Events page.
+    </p>
+  </header>
+
+  <div class="wrap">
+
+    <section>
+      <div id="notice-success" class="notice success" style="display:none">
+        Thanks! Your submission has been sent for review.
+      </div>
+      <div id="notice-error" class="notice error" style="display:none">
+        Something went wrong, or a required field was missing/invalid. Please check the form and try again.
+      </div>
+
+      <form action="/submit-event.php" method="POST">
+        <div class="hp-field" aria-hidden="true">
+          <label for="website">Website</label>
+          <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+        </div>
+
+        <div>
+          <label for="title">Event Title <span class="required">*</span></label>
+          <input type="text" id="title" name="title" required>
+        </div>
+
+        <div>
+          <label for="dates">Dates <span class="required">*</span></label>
+          <input type="text" id="dates" name="dates" placeholder="e.g. 12–14 June 2026, or annual (month varies)" required>
+        </div>
+
+        <div>
+          <label for="location">Location / Venue <span class="required">*</span></label>
+          <input type="text" id="location" name="location" required>
+        </div>
+
+        <div>
+          <label for="frequency">Frequency</label>
+          <select id="frequency" name="frequency">
+            <option value="Annual">Annual</option>
+            <option value="Bi-annual">Bi-annual</option>
+            <option value="One-time">One-time</option>
+            <option value="Monthly">Monthly</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="notes">Notes</label>
+          <textarea id="notes" name="notes" placeholder="Anything worth knowing -- past attendance, relevance to IPA members, etc."></textarea>
+        </div>
+
+        <div>
+          <label for="link">Reference / Website Link</label>
+          <input type="url" id="link" name="link" placeholder="https://">
+        </div>
+
+        <div>
+          <label for="organizer_email">Organizer Contact Email</label>
+          <input type="email" id="organizer_email" name="organizer_email" placeholder="you@example.com">
+          <div class="hint">In case we have questions before listing it.</div>
+        </div>
+
+        <button class="submit-btn" type="submit">Submit event</button>
+      </form>
+    </section>
+
+  </div>
+
+  <footer>
+    <img src="/images/icon-mark.png" alt="" />
+    Maintained by the IPA Communications Working Group
+  </footer>
+
+  <script>
+    (function () {
+      var params = new URLSearchParams(window.location.search);
+      if (params.get('submitted') === '1') {
+        document.getElementById('notice-success').style.display = 'block';
+      } else if (params.get('error') === '1') {
+        document.getElementById('notice-error').style.display = 'block';
+      }
+    })();
+  </script>
+
+</body>
+</html>
