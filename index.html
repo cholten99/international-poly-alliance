@@ -34,26 +34,11 @@
     .wrap { max-width: 960px; margin: 0 auto; padding: 0 1.5rem; }
 
     header.hero {
-      position: relative;
       text-align: center;
       padding: 2rem 1.5rem 1.5rem;
       background: linear-gradient(135deg, #fdf2f8 0%, #f3effa 45%, #e9f5fb 100%);
     }
     header.hero img.logo { width: 280px; height: auto; margin-bottom: 0.5rem; }
-    header.hero .nav-link {
-      position: absolute;
-      top: 1.25rem;
-      right: 1.5rem;
-      display: inline-block;
-      font-size: 0.85rem;
-      font-weight: 600;
-      text-decoration: none;
-      padding: 0.4rem 0.9rem;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      background: var(--white);
-    }
-    header.hero .nav-link:hover { background: var(--offwhite); }
     header.hero .tagline {
       font-family: 'Montserrat', sans-serif;
       font-weight: 800;
@@ -109,7 +94,7 @@
       padding: 2.5rem;
       text-align: center;
     }
-    .join .btn {
+    .btn {
       display: inline-block;
       margin-top: 1rem;
       padding: 0.75rem 1.75rem;
@@ -119,7 +104,9 @@
       text-decoration: none;
       font-weight: 600;
     }
-    .join .btn:hover { filter: brightness(0.92); }
+    .btn:hover { filter: brightness(0.92); }
+
+    .events-link { text-align: center; }
     .join .note {
       margin-top: 1rem;
       font-size: 0.85rem;
@@ -139,7 +126,6 @@
 <body>
 
   <header class="hero">
-    <a class="nav-link" href="/events.html">Events →</a>
     <img class="logo" src="/images/logo-transparent.png" alt="International Poly Alliance logo" />
     <div class="tagline">Connect. Protect. Empower.</div>
     <h1>International Poly Alliance</h1>
@@ -166,6 +152,12 @@
           <p>Sharing knowledge, event playbooks, and organisational toolkits across borders.</p>
         </div>
       </div>
+    </section>
+
+    <section id="events-link">
+      <h2>Events</h2>
+      <p class="about-copy">Conferences and gatherings of interest to the global polyamory and ethical non-monogamy community.</p>
+      <a class="btn" href="/events.html">See Events</a>
     </section>
 
     <section id="members">
