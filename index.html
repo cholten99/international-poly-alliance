@@ -116,6 +116,29 @@
     #events-link .btn { width: 25%; min-width: 160px; margin: 0; }
     #events-link .btn.secondary { background: var(--white); color: var(--blue); border: 1px solid var(--blue); }
     #events-link .btn.secondary:hover { background: var(--offwhite); }
+    #latest { padding: 0 0 3rem; }
+    .latest {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem 1.5rem;
+      background: linear-gradient(135deg, #fdf2f8 0%, #f3effa 45%, #e9f5fb 100%);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 1.5rem 1.75rem;
+    }
+    .latest .kicker {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--pink);
+    }
+    .latest h2 { text-align: left; font-size: 1.2rem; margin: 0.2rem 0 0.25rem; }
+    .latest p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+    .latest .btn { margin-top: 0; }
     .join .note {
       margin-top: 1rem;
       font-size: 0.85rem;
@@ -160,6 +183,17 @@
           <h3>Empower</h3>
           <p>Sharing knowledge, event playbooks, and organisational toolkits across borders.</p>
         </div>
+      </div>
+    </section>
+
+    <section id="latest">
+      <div class="latest">
+        <div>
+          <div class="kicker">Latest update</div>
+          <h2>Status Update &amp; Meeting Report: October 2026</h2>
+          <p>Our first community FIKA, new outreach across Europe and Japan, and the Phase 1 working groups.</p>
+        </div>
+        <a class="btn" href="/latest-update.html">Read the update</a>
       </div>
     </section>
 
